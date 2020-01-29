@@ -1,8 +1,8 @@
 class CreateReservations < ActiveRecord::Migration[5.2]
   def change
     create_table :reservations do |t|
-      t.string :seat_row
-      t.integer :seat_column
+      t.string :seat
+      t.integer :
 
       t.timestamps
     end

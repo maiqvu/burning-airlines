@@ -10,6 +10,9 @@ class ReservationsController < ApplicationController
   # GET /reservations/1
   # GET /reservations/1.json
   def show
+    # raise "hell"
+    @reservation = Reservation.find params[:id]
+
   end
 
   # GET /reservations/new
@@ -69,6 +72,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:seat_row, :seat_column)
+      params.require(:reservation).permit(:seat)
     end
 end

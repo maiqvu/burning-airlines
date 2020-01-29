@@ -1,5 +1,5 @@
 class RemoveSeatRowFromReservations < ActiveRecord::Migration[5.2]
   def change
-    remove_column :reservations, :seat_row, :string
+    remove_column :reservations, :seat, :string
   end
 end
