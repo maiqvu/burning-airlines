@@ -7,8 +7,6 @@ import Key from './Key'
 
 class FlightShow extends React.Component {
 
-
-
   state = {
     loaded: false,
     flightDetails: {},
@@ -30,7 +28,7 @@ class FlightShow extends React.Component {
         ) )
         .catch( err => console.warn( err ));
 
-  }
+  } //compmount
 
 
 
@@ -66,7 +64,8 @@ class FlightShow extends React.Component {
 
     </div>
     )
-  }
+  }//render
+  
 }
 
 export default FlightShow

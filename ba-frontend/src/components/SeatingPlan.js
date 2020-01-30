@@ -8,17 +8,33 @@ class SeatingPlan extends React.Component {
     seatArray: new Array(this.props.seats).fill(false)
   }
 
+  handleClick(i){
+    const seatArray = this.state.seatArray.slice();
+    seatArray[ i ] = true;
+    this.setState({seatArray: seatArray});
+
+    console.log(this.state.seatArray)
+  }
+
 
   renderSquare(i, seat) {
     // console.log('render', seat);
-    return <Square seat={i} key={ i } status={ seat }/>;
-  }
+    return <Square seat={i} key={i}
+      status={ this.state.seatArray[i] }
+      onClick={() => this.handleClick(i)}
+    />;
+
+  } // render Square
+
+
 
 
   componentDidMount(){
 
     this.seatUpdate( )
   }
+
+
 
 
   seatUpdate(  ){
