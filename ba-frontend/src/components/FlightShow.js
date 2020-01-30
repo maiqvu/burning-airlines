@@ -4,9 +4,10 @@ import SeatingPlan from './SeatingPlan'
 import FlightDetails from './FlightDetails'
 import Key from './Key'
 
-const FLIGHT_URL = 'http://localhost:3000/flights/14.json';
 
 class FlightShow extends React.Component {
+
+
 
   state = {
     loaded: false,
@@ -15,6 +16,9 @@ class FlightShow extends React.Component {
 
   componentDidMount( ){
     console.log('mounted');
+
+    const FLIGHT_URL = `http://localhost:3000/flights/${this.props.match.params.id}.json`;
+
 
     axios.get( FLIGHT_URL )
         .then( res => this.setState(

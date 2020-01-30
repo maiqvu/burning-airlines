@@ -12,7 +12,7 @@ import FlightShow from './components/FlightShow'
 
 const Routes = () => {
   return (
-    <>
+    <div className="App">
     <h1>Welcome to Burning Airlines</h1>
 
     <Router>
@@ -27,7 +27,7 @@ const Routes = () => {
         <Route exact path="/flights/:id" component={ FlightShow }/>
       </div>
     </Router>
-    </>
+  </div>
   );
 }
 
