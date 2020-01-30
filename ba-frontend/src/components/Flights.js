@@ -52,11 +52,11 @@ class Flights extends Component {
           this.state.allFlights.reverse().map( f => {
             return (
             <tr key={ f.id }>
-              <td>{ f.id }</td>
+              <td>{ f.date }</td>
               <td><Link to={`/flights/${f.id}`}>{f.flight_no}</Link></td>
               <td>{ f.from } > { f.to }</td>
               <td>{ f.plane.model }</td>
-              <td>27</td>
+              <td>{ f.plane.seats - f.reservations.length }</td>
             </tr>
             )
           })
