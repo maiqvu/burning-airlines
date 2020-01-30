@@ -33,6 +33,8 @@ class FlightsController < ApplicationController
     end
   end
 
+  #hey maiiii
+  
   # GET /flights/1
   # GET /flights/1.json
   def show
