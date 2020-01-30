@@ -37,6 +37,16 @@ class FlightsController < ApplicationController
   # GET /flights/1.json
   def show
     @flight = Flight.find(params[:id])
+
+    respond_to do |format|
+      format.html   # for flights#show
+      format.json { render json: {
+          flight: @flight,
+          plane: @flight.plane,
+          reservations: @flight.reservations
+
+        } }
+    end
   end
 
 
