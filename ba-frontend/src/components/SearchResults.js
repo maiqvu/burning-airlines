@@ -44,12 +44,13 @@ class SearchResults extends React.Component {
         <tbody>
           {
             this.state.flightResults.map(flight => {
-              return(<tr key={ flight.id }>
-              <td>{ flight.date }</td>
-              <td><Link to={`/flights/${flight.id}`}>{flight.flight_no}</Link></td>
-              <td>{ flight.from } > { flight.to }</td>
-              <td>{ flight.plane.model }</td>
-            </tr>)
+              return (
+              <tr key={ flight.id }>
+                <td>{ flight.date }</td>
+                <td><Link to={`/flights/${flight.id}`}>{flight.flight_no}</Link></td>
+                <td>{ flight.from } > { flight.to }</td>
+                <td>{ flight.plane.model }</td>
+              </tr>)
             })
           }
         </tbody>
