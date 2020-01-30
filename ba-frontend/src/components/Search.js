@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../App.css';
-import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 class Search extends Component {
 
@@ -31,11 +29,13 @@ class Search extends Component {
 
   render() {
     return (
-      <>
+      <form onSubmit={ this.handleSubmit }>
         <input autoFocus type="text" placeholder="Origin" onChange={ this.handleOriginInput } />
-        <input autoFocus type="text" placeholder="Destination" onChange={ this.handleDestinationInput } />
-        <button onClick={ this.handleSubmit }>Search!</button>
-      </>
+        <br/>
+        <input type="text" placeholder="Destination" onChange={ this.handleDestinationInput } />
+        <br/>
+        <input type="submit" value="Search!" />
+      </form>
     );
   }
 }

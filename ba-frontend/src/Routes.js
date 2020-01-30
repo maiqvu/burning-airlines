@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import Search from './components/Search';
+import SearchResults from './components/SearchResults';
 
 
 const Routes = () => {
@@ -16,13 +17,14 @@ const Routes = () => {
 
     <Router>
       <nav>
-        <Link to="/search">Find a flight</Link> &nbsp;
+        <Link to="/">Home</Link> | &nbsp;
+        <Link to="/search">Find a flight</Link>
       </nav>
       <hr/>
       <div>
         <Route path="/search" component={Search} />
         <Route path="/search/:from/:to" component={SearchResults} />
-        {/* <Route exact path="/flights/:flightid/:airplaneid" component={Flights} /> */}
+        {/* <Route exact path="/flights/:flightid" component={Flights} /> */}
       </div>
     </Router>
     </>
