@@ -21,7 +21,7 @@ class SearchResults extends React.Component {
       // console.log('filtered output: ', filtered);
 
       this.setState({ flightResults: filtered });
-      console.log(this.state.flightResults);
+      // console.log(this.state.flightResults);
     })
     .catch( err => console.warn(err) )
   }
@@ -29,23 +29,31 @@ class SearchResults extends React.Component {
   render() {
     return (
       <>
-        <h1>here are your results...</h1>
-        <span>Date</span> |
-        <span>Flight</span> |
-        <span>From > To</span> |
-        <span>Plane</span>
+      <h1>here are your results...</h1>
 
-        <ul>
-        {
-          this.state.flightResults.map( flight =>
-            <li key={flight.id}>
-              <span>{flight.date}</span>
-              <Link to={`/flights/${flight.id}`}>{flight.flight_no}</Link>
-              <span>{flight.from} -> {flight.to}</span>
-            </li>
-          )
-        }
-        </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Flight</th>
+            <th>From > To</th>
+            <th>Plane</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {
+            this.state.flightResults.map(flight => {
+              return(<tr key={ flight.id }>
+              <td>{ flight.date }</td>
+              <td><Link to={`/flights/${flight.id}`}>{flight.flight_no}</Link></td>
+              <td>{ flight.from } > { flight.to }</td>
+              <td>{ flight.plane.model }</td>
+            </tr>)
+            })
+          }
+        </tbody>
+      </table>
       </>
     );
   }

@@ -27,13 +27,16 @@ class FlightsController < ApplicationController
   def index
     headers['Access-Control-Allow-Origin'] = '*'
     @flights = Flight.all
+
+    # @flights.each do |flight|
+    #   @plane = flight.plane.model
+    # end
+
     respond_to do |format|
       format.html   # for flights#show
-      format.json { render json: @flights }
+      format.json { render json: @flights.to_json(:include => :plane) }
     end
   end
-
-  #hey maiiii
   
   # GET /flights/1
   # GET /flights/1.json
@@ -46,7 +49,6 @@ class FlightsController < ApplicationController
           flight: @flight,
           plane: @flight.plane,
           reservations: @flight.reservations
-
         } }
     end
   end
