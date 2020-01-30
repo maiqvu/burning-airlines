@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import { 
-  Route, 
-  Link, 
-  HashRouter as Router 
+import {
+  Route,
+  Link,
+  HashRouter as Router
 } from 'react-router-dom';
 
 import Search from './components/Search';
 import SearchResults from './components/SearchResults';
-
+import FlightShow from './components/FlightShow'
 
 const Routes = () => {
   return (
@@ -24,7 +24,7 @@ const Routes = () => {
       <div>
         <Route path="/search" component={Search} />
         <Route path="/search/:from/:to" component={SearchResults} />
-        {/* <Route exact path="/flights/:flightid" component={Flights} /> */}
+        <Route exact path="/flights/:id" component={ FlightShow }/>
       </div>
     </Router>
     </>
