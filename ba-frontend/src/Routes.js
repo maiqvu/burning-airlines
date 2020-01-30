@@ -13,7 +13,7 @@ import Flights from './components/Flights';
 
 const Routes = () => {
   return (
-    <>
+    <div className="App">
     <h1>Welcome to Burning Airlines</h1>
 
     <Router>
@@ -30,7 +30,7 @@ const Routes = () => {
         <Route path="/flights" component={Flights} />
       </div>
     </Router>
-    </>
+  </div>
   );
 }
 
